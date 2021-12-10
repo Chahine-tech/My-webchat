@@ -3,10 +3,7 @@ My-webchat with nextjs, nodejs, socket.io 💭
 
 ## Demo
 
-
-
 https://user-images.githubusercontent.com/70902783/145608684-02f6eb0c-dced-4d1a-b27e-5ee7ffd14c65.mp4
-
 
 
 ## Installation
