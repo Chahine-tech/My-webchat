@@ -3,7 +3,8 @@ My-webchat with nextjs, nodejs, socket.io 💭
 
 ## Demo
 
-https://user-images.githubusercontent.com/70902783/145605088-231b0c46-66a5-40ce-bbf5-83bc2c04b625.mp4
+<img src="https://media.giphy.com/media/qa9fZ4viMBknKbsxBt/giphy.gif" width="690" height="388" />
+
 
 
 ## Installation
