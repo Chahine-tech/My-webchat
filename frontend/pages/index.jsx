@@ -49,9 +49,9 @@ export default function Home() {
     console.log(roomSelect)
     socket.emit("room::message::send", { room: roomSelect, message: message, time: new Date(Date.now()).getHours()+":"+new Date(Date.now()).getMinutes()});
   }
-  function privateRoom(message) {
-   
-    socket.emit("private::message", {message, socket: socket.id})
+  function privateRoom(message, password) {
+    console.log("testrigolo")
+    socket.emit('SEND_PASSWORD', password)
     
   }
   console.log("test1", messages.map((m) => (m, m[3])))

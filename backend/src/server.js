@@ -27,16 +27,23 @@ io.on("connection", (socket) => {
     socket.on("room::message::send", ({ room, message, time }) => {
         console.log("Message received", message, room, time)
         if (room && message) {
-            io.to(room).emit("room::message::send", { room, message, time});
+            io.to(room).emit("room::message::send", { room, message, time });
         }
         else {
             console.log("Error no room or message")
         }
 
     });
-    socket.on("private::message", (anotherSocketId, message) => {
-        console.log("Welcome to private room")
-        socket.to(anotherSocketId).emit("private message", socket.id, message);
+    socket.emit('ASK_PASSWORD')
+    socket.on("private::message", (anotherSocketId, message, password) => {
+        if (password) {
+            socket.join(privateRoom)
+            console.log("Welcome to private room", anotherSocketId, message)
+        }
+        else{
+            console.log("password incorrect")
+        }
+
     })
 })
 
