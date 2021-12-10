@@ -26,8 +26,8 @@ export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    socket.on("room::message::send", ({ room, message }) => {
-      setMessages((messages) => [...messages, message])
+    socket.on("room::message::send", ({ message, time }) => {
+      setMessages((messages) => [...messages, {message, time}])
     })
 
     // socket.on("room::join", ({ room }) => {
@@ -46,9 +46,13 @@ export default function Home() {
   }
   function send(message) {
     console.log(roomSelect)
-    socket.emit("room::message::send", { room: roomSelect, message: message });
+    socket.emit("room::message::send", { room: roomSelect, message: message, time: new Date(Date.now()).getHours()+":"+new Date(Date.now()).getMinutes()});
   }
-
+  function privateRoom() {
+    console.log("test")
+    socket.emit("private::message", socket.id, messages)
+  }
+  console.log("test1", messages.map((m) => (m, m[3])))
   return (
     <>
       <div>
@@ -70,7 +74,7 @@ export default function Home() {
             </a> */}
             <div className="py-4 px-20 h-screen flex flex-col justify-between">
               <div className="flex flex-col space-y-2">
-                {messages.map((m, i) => <p key={i}>{m}</p>)}
+                {messages.map((m, i) => <p key={i}>{m.message},{m.time}</p>)}
               </div>
               <ChatInput send={send} />
             </div>

@@ -24,18 +24,18 @@ io.on("connection", (socket) => {
     //     users = users.filter(({ socketId }) => socketId !== socket.id)
     //     console.log('current users:', users);
     // });
-    socket.on("room::message::send", ({ room, message }) => {
-        console.log("Message received", message, room)
+    socket.on("room::message::send", ({ room, message, time }) => {
+        console.log("Message received", message, room, time)
         if (room && message) {
-            io.to(room).emit("room::message::send", { room, message});
+            io.to(room).emit("room::message::send", { room, message, time});
         }
         else {
             console.log("Error no room or message")
         }
 
     });
-    socket.on("private message", (anotherSocketId, msg) => {
-        socket.to(anotherSocketId).emit("private message", socket.id, msg);
+    socket.on("private::message", (anotherSocketId, msg) => {
+        socket.to(anotherSocketId).emit("private::message", socket.id, msg);
     })
 })
 

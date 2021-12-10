@@ -28,11 +28,13 @@ function classNames(...classes) {
 export default function SideBar(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const socket = useContext(SocketContext);
+  
   function updateRoom(room) {
     console.log(room)
     props.setRoomSelect(room)
     socket.emit('room::join', { room })
   }
+
   return (
     <>
       {/*
