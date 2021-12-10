@@ -3,7 +3,7 @@ My-webchat with nextjs, nodejs, socket.io 💭
 
 ## Demo
 
-<img src="https://media.giphy.com/media/qa9fZ4viMBknKbsxBt/giphy.gif" width="690" height="388" />
+<img src="https://media.giphy.com/media/qa9fZ4viMBknKbsxBt/giphy.gif" width="690" height="400" />
 
 
 
