@@ -5,6 +5,11 @@ My-webchat with nextjs, nodejs, socket.io 💭
 
 Install dependencies with npm or yarn
 
+
+https://user-images.githubusercontent.com/70902783/145604727-49a9b3cb-1f55-4a53-9a11-73e251cc0853.mp4
+
+
+
 ```bash
 npm install
 ```
