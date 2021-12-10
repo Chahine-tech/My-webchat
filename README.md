@@ -1,7 +1,6 @@
 # My-webchat
-My-webchat with nextjs, nodejs, socket.io 💭
-<img src=""> </img>
-
+My-webchat with nextjs, nodejs, socket.io 💭 
+<img src="https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/images/screenshot.png">
 ## Installation
 
 Install dependencies with npm or yarn
