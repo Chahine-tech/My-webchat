@@ -177,7 +177,7 @@ export default function SideBar(props) {
                 </a>
               ))}
             </nav>
-            <button class="h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Private Room</button>
+            <button class="h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800" onClick={() => props.privateRoom()}>Private Room</button>
           </div>
           <div className="flex-shrink-0 flex border-t border-gray-200 p-4">
             <a href="#" className="flex-shrink-0 w-full group block">

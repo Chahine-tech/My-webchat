@@ -4,6 +4,7 @@ import { MenuIcon } from '@heroicons/react/outline'
 import { SocketContext } from "../context/socket"
 import Sidebar from "../components/sidebar"
 import ChatInput from "../components/ChatInput"
+
 function slugify(string) {
   return [...string]
     .map((letter, index) => {
@@ -48,15 +49,16 @@ export default function Home() {
     console.log(roomSelect)
     socket.emit("room::message::send", { room: roomSelect, message: message, time: new Date(Date.now()).getHours()+":"+new Date(Date.now()).getMinutes()});
   }
-  function privateRoom() {
-    console.log("test")
-    socket.emit("private::message", socket.id, messages)
+  function privateRoom(message) {
+   
+    socket.emit("private::message", {message, socket: socket.id})
+    
   }
   console.log("test1", messages.map((m) => (m, m[3])))
   return (
     <>
       <div>
-        <Sidebar join={join} setRoomSelect={setRoomSelect} />
+        <Sidebar join={join} setRoomSelect={setRoomSelect} privateRoom={privateRoom}/>
         <div className="md:pl-64 flex flex-col flex-1">
           <div className="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-gray-100">
             <button

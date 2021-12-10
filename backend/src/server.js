@@ -34,8 +34,9 @@ io.on("connection", (socket) => {
         }
 
     });
-    socket.on("private::message", (anotherSocketId, msg) => {
-        socket.to(anotherSocketId).emit("private::message", socket.id, msg);
+    socket.on("private::message", (anotherSocketId, message) => {
+        console.log("Welcome to private room")
+        socket.to(anotherSocketId).emit("private message", socket.id, message);
     })
 })
 
