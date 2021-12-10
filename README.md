@@ -1,4 +1,4 @@
-# mywebchat
+# My-webchat
 My-webchat with nextjs, nodejs, socket.io 💭
 
 ## Installation
